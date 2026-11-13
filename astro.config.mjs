@@ -2,11 +2,9 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
-// SITE_URL and BASE_PATH are injected by the GitHub Actions workflow
-// (from actions/configure-pages), so they follow your custom domain
-// automatically once it is configured. Local fallbacks below.
-const site = process.env.SITE_URL || 'https://rustamsalmanov.com';
-const base = process.env.BASE_PATH || '/';
+// Served from the custom domain root (see public/CNAME).
+const site = 'https://rustamsalmanov.es';
+const base = '/';
 
 export default defineConfig({
   site,
