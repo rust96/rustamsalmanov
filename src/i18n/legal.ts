@@ -91,7 +91,7 @@ export const legal: Record<LegalKey, Record<Lang, LegalDoc>> = {
   privacy: {
     es: {
       title: 'Política de privacidad',
-      description: 'Cómo se tratan los datos personales que envías a través del formulario de contacto, conforme al RGPD y la LOPDGDD.',
+      description: 'Cómo se tratan los datos personales cuando me contactas por WhatsApp, conforme al RGPD y la LOPDGDD.',
       updated: 'Última actualización: noviembre de 2026',
       sections: [
         {
@@ -100,30 +100,30 @@ export const legal: Record<LegalKey, Record<Lang, LegalDoc>> = {
         },
         {
           h: '2. Datos que se recogen',
-          p: ['A través del formulario de contacto se recogen los datos que introduces voluntariamente:'],
-          ul: ['Nombre', 'Correo electrónico', 'Tipo de proyecto', 'Contenido de tu mensaje (y cualquier dato personal que decidas incluir en él)'],
+          p: ['Este sitio web no tiene formulario de contacto y no recoge datos personales por sí mismo. El canal de contacto es WhatsApp. Si me escribes, recibo los datos que tú aportas voluntariamente:'],
+          ul: ['Tu número de teléfono y, en su caso, el nombre de tu perfil de WhatsApp', 'El contenido de tus mensajes (y cualquier dato personal que decidas incluir en ellos)'],
         },
         { h: '3. Finalidad', p: ['Atender tu consulta, enviarte un presupuesto o propuesta y mantener la comunicación necesaria con ese fin. No se utilizan tus datos para elaborar perfiles ni para decisiones automatizadas, y no se envían comunicaciones comerciales que no hayas solicitado.'] },
         {
           h: '4. Base jurídica',
-          p: ['La base jurídica es tu consentimiento (art. 6.1.a RGPD), que otorgas al marcar la casilla de aceptación y enviar el formulario, y la aplicación de medidas precontractuales a petición tuya (art. 6.1.b RGPD) cuando solicitas un presupuesto. Puedes retirar tu consentimiento en cualquier momento escribiendo a la dirección de correo indicada.'],
+          p: ['La base jurídica es tu consentimiento (art. 6.1.a RGPD), que otorgas al iniciar la conversación conmigo por WhatsApp, y la aplicación de medidas precontractuales a petición tuya (art. 6.1.b RGPD) cuando solicitas un presupuesto. Puedes retirar tu consentimiento en cualquier momento escribiendo a la dirección de correo indicada.'],
         },
         {
           h: '5. Destinatarios y encargados del tratamiento',
-          p: ['Los datos no se venden ni se ceden a terceros para sus propios fines. Para recibir los mensajes se utiliza el servicio de formularios Formspree (Formspree, Inc.), que actúa como encargado del tratamiento. Si me escribes por correo electrónico o WhatsApp, los datos serán tratados también a través de esos servicios, con sus propias condiciones. El sitio web se aloja en GitHub Pages (GitHub, Inc.), que como proveedor de alojamiento puede registrar datos técnicos de conexión, como la dirección IP, al servir las páginas.'],
+          p: ['Los datos no se venden ni se ceden a terceros para sus propios fines. La comunicación por WhatsApp se realiza a través de ese servicio (Meta), que trata los datos conforme a sus propias condiciones y política de privacidad. El sitio web se aloja en GitHub Pages (GitHub, Inc.), que como proveedor de alojamiento puede registrar datos técnicos de conexión, como la dirección IP, al servir las páginas.'],
         },
-        { h: '6. Transferencias internacionales', p: ['Los proveedores mencionados están establecidos en Estados Unidos, por lo que el tratamiento puede implicar una transferencia internacional de datos, amparada en las garantías adecuadas previstas en el RGPD (como las cláusulas contractuales tipo o la decisión de adecuación aplicable).'] },
+        { h: '6. Transferencias internacionales', p: ['Los proveedores mencionados pueden estar establecidos en Estados Unidos, por lo que el tratamiento puede implicar una transferencia internacional de datos, amparada en las garantías adecuadas previstas en el RGPD (como las cláusulas contractuales tipo o la decisión de adecuación aplicable).'] },
         { h: '7. Conservación', p: ['Los datos se conservan durante el tiempo necesario para atender tu consulta y, si se llega a formalizar una relación profesional, durante los plazos legales aplicables. Después se suprimen o se bloquean mientras puedan derivarse responsabilidades.'] },
         {
           h: '8. Tus derechos',
           p: [`Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a ${email}, indicando el derecho que deseas ejercer. Si consideras que tus datos no se tratan correctamente, tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).`],
         },
-        { h: '9. Seguridad', p: ['Se aplican medidas técnicas y organizativas razonables para proteger tus datos. La comunicación con el formulario se realiza mediante conexión cifrada (HTTPS).'] },
+        { h: '9. Seguridad', p: ['Se aplican medidas técnicas y organizativas razonables para proteger tus datos. Este sitio web se sirve mediante conexión cifrada (HTTPS).'] },
       ],
     },
     ca: {
       title: 'Política de privacitat',
-      description: 'Com es tracten les dades personals que envies mitjançant el formulari de contacte, conforme a l’RGPD i la LOPDGDD.',
+      description: 'Com es tracten les dades personals quan em contactes per WhatsApp, conforme a l’RGPD i la LOPDGDD.',
       updated: 'Última actualització: novembre de 2026',
       sections: [
         {
@@ -132,30 +132,30 @@ export const legal: Record<LegalKey, Record<Lang, LegalDoc>> = {
         },
         {
           h: '2. Dades que es recullen',
-          p: ['Mitjançant el formulari de contacte es recullen les dades que introdueixes voluntàriament:'],
-          ul: ['Nom', 'Correu electrònic', 'Tipus de projecte', 'Contingut del teu missatge (i qualsevol dada personal que decideixis incloure-hi)'],
+          p: ['Aquest lloc web no té formulari de contacte i no recull dades personals per si mateix. El canal de contacte és WhatsApp. Si m’escrius, rebo les dades que tu aportes voluntàriament:'],
+          ul: ['El teu número de telèfon i, si escau, el nom del teu perfil de WhatsApp', 'El contingut dels teus missatges (i qualsevol dada personal que decideixis incloure-hi)'],
         },
         { h: '3. Finalitat', p: ['Atendre la teva consulta, enviar-te un pressupost o proposta i mantenir la comunicació necessària amb aquesta finalitat. No s’utilitzen les teves dades per elaborar perfils ni per a decisions automatitzades, i no s’envien comunicacions comercials que no hagis sol·licitat.'] },
         {
           h: '4. Base jurídica',
-          p: ['La base jurídica és el teu consentiment (art. 6.1.a RGPD), que atorgues en marcar la casella d’acceptació i enviar el formulari, i l’aplicació de mesures precontractuals a petició teva (art. 6.1.b RGPD) quan sol·licites un pressupost. Pots retirar el teu consentiment en qualsevol moment escrivint a l’adreça de correu indicada.'],
+          p: ['La base jurídica és el teu consentiment (art. 6.1.a RGPD), que atorgues en iniciar la conversa amb mi per WhatsApp, i l’aplicació de mesures precontractuals a petició teva (art. 6.1.b RGPD) quan sol·licites un pressupost. Pots retirar el teu consentiment en qualsevol moment escrivint a l’adreça de correu indicada.'],
         },
         {
           h: '5. Destinataris i encarregats del tractament',
-          p: ['Les dades no es venen ni se cedeixen a tercers per a finalitats pròpies. Per rebre els missatges s’utilitza el servei de formularis Formspree (Formspree, Inc.), que actua com a encarregat del tractament. Si m’escrius per correu electrònic o WhatsApp, les dades també seran tractades mitjançant aquests serveis, amb les seves pròpies condicions. El lloc web s’allotja a GitHub Pages (GitHub, Inc.), que com a proveïdor d’allotjament pot registrar dades tècniques de connexió, com l’adreça IP, en servir les pàgines.'],
+          p: ['Les dades no es venen ni se cedeixen a tercers per a finalitats pròpies. La comunicació per WhatsApp es fa mitjançant aquest servei (Meta), que tracta les dades conforme a les seves pròpies condicions i política de privacitat. El lloc web s’allotja a GitHub Pages (GitHub, Inc.), que com a proveïdor d’allotjament pot registrar dades tècniques de connexió, com l’adreça IP, en servir les pàgines.'],
         },
-        { h: '6. Transferències internacionals', p: ['Els proveïdors esmentats estan establerts als Estats Units, de manera que el tractament pot implicar una transferència internacional de dades, emparada per les garanties adequades previstes a l’RGPD (com les clàusules contractuals tipus o la decisió d’adequació aplicable).'] },
+        { h: '6. Transferències internacionals', p: ['Els proveïdors esmentats poden estar establerts als Estats Units, de manera que el tractament pot implicar una transferència internacional de dades, emparada per les garanties adequades previstes a l’RGPD (com les clàusules contractuals tipus o la decisió d’adequació aplicable).'] },
         { h: '7. Conservació', p: ['Les dades es conserven durant el temps necessari per atendre la teva consulta i, si s’arriba a formalitzar una relació professional, durant els terminis legals aplicables. Després se suprimeixen o es bloquegen mentre en puguin derivar responsabilitats.'] },
         {
           h: '8. Els teus drets',
           p: [`Pots exercir els drets d’accés, rectificació, supressió, oposició, limitació del tractament i portabilitat escrivint a ${email}, indicant el dret que vols exercir. Si consideres que les teves dades no es tracten correctament, tens dret a presentar una reclamació davant l’Agència Espanyola de Protecció de Dades (www.aepd.es) o l’Autoritat Catalana de Protecció de Dades (apdcat.gencat.cat).`],
         },
-        { h: '9. Seguretat', p: ['S’apliquen mesures tècniques i organitzatives raonables per protegir les teves dades. La comunicació amb el formulari es fa mitjançant connexió xifrada (HTTPS).'] },
+        { h: '9. Seguretat', p: ['S’apliquen mesures tècniques i organitzatives raonables per protegir les teves dades. Aquest lloc web es serveix mitjançant connexió xifrada (HTTPS).'] },
       ],
     },
     en: {
       title: 'Privacy policy',
-      description: 'How the personal data you send through the contact form is processed, in accordance with the GDPR and Spanish data protection law.',
+      description: 'How personal data is processed when you contact me on WhatsApp, in accordance with the GDPR and Spanish data protection law.',
       updated: 'Last updated: November 2026',
       sections: [
         {
@@ -164,25 +164,25 @@ export const legal: Record<LegalKey, Record<Lang, LegalDoc>> = {
         },
         {
           h: '2. Data collected',
-          p: ['The contact form collects the data you enter voluntarily:'],
-          ul: ['Name', 'Email address', 'Project type', 'The content of your message (and any personal data you choose to include in it)'],
+          p: ['This website has no contact form and does not collect personal data by itself. The contact channel is WhatsApp. If you write to me, I receive the data you provide voluntarily:'],
+          ul: ['Your phone number and, where applicable, your WhatsApp profile name', 'The content of your messages (and any personal data you choose to include in them)'],
         },
         { h: '3. Purpose', p: ['To answer your enquiry, send you a quote or proposal, and keep in touch for that purpose. Your data is not used for profiling or automated decision-making, and no commercial communications you have not asked for are sent.'] },
         {
           h: '4. Legal basis',
-          p: ['The legal basis is your consent (Art. 6(1)(a) GDPR), given by ticking the acceptance box and submitting the form, and the performance of pre-contractual steps at your request (Art. 6(1)(b) GDPR) when you ask for a quote. You can withdraw your consent at any time by writing to the email address above.'],
+          p: ['The legal basis is your consent (Art. 6(1)(a) GDPR), given by starting a conversation with me on WhatsApp, and the performance of pre-contractual steps at your request (Art. 6(1)(b) GDPR) when you ask for a quote. You can withdraw your consent at any time by writing to the email address above.'],
         },
         {
           h: '5. Recipients and processors',
-          p: ['Your data is not sold or shared with third parties for their own purposes. Messages are received through the Formspree form service (Formspree, Inc.), which acts as a data processor. If you write to me by email or WhatsApp, your data will also be handled through those services, under their own terms. The website is hosted on GitHub Pages (GitHub, Inc.), which as a hosting provider may log technical connection data, such as the IP address, when serving pages.'],
+          p: ['Your data is not sold or shared with third parties for their own purposes. Communication via WhatsApp takes place through that service (Meta), which processes data under its own terms and privacy policy. The website is hosted on GitHub Pages (GitHub, Inc.), which as a hosting provider may log technical connection data, such as the IP address, when serving pages.'],
         },
-        { h: '6. International transfers', p: ['The providers mentioned are established in the United States, so processing may involve an international data transfer, covered by the appropriate safeguards provided for in the GDPR (such as standard contractual clauses or an applicable adequacy decision).'] },
+        { h: '6. International transfers', p: ['The providers mentioned may be established in the United States, so processing may involve an international data transfer, covered by the appropriate safeguards provided for in the GDPR (such as standard contractual clauses or an applicable adequacy decision).'] },
         { h: '7. Retention', p: ['Data is kept for as long as needed to answer your enquiry and, if a professional relationship is formed, for the applicable legal periods. It is then deleted or blocked for as long as liabilities may arise.'] },
         {
           h: '8. Your rights',
           p: [`You may exercise your rights of access, rectification, erasure, objection, restriction of processing and portability by writing to ${email}, stating the right you wish to exercise. If you believe your data is not being processed properly, you have the right to lodge a complaint with the Spanish Data Protection Agency (www.aepd.es) or the Catalan Data Protection Authority (apdcat.gencat.cat).`],
         },
-        { h: '9. Security', p: ['Reasonable technical and organisational measures are applied to protect your data. Communication with the form uses an encrypted connection (HTTPS).'] },
+        { h: '9. Security', p: ['Reasonable technical and organisational measures are applied to protect your data. This website is served over an encrypted connection (HTTPS).'] },
       ],
     },
   },
@@ -197,7 +197,7 @@ export const legal: Record<LegalKey, Record<Lang, LegalDoc>> = {
         { h: '1. ¿Qué son las cookies?', p: ['Las cookies son pequeños archivos que un sitio web puede guardar en tu dispositivo para recordar información sobre tu visita.'] },
         {
           h: '2. Cookies que utiliza este sitio',
-          p: ['Este sitio web no utiliza cookies de análisis o medición, ni cookies publicitarias, ni de seguimiento o de perfilado. Solo se utilizan cookies técnicas, estrictamente necesarias para que el sitio funcione y para prestar el servicio que solicitas (por ejemplo, el envío del formulario de contacto).'],
+          p: ['Este sitio web no utiliza cookies de análisis o medición, ni cookies publicitarias, ni de seguimiento o de perfilado. Solo se utilizan cookies técnicas, estrictamente necesarias para que el sitio funcione y para prestar el servicio.'],
         },
         { h: '3. Por qué no hay banner de cookies', p: ['Las cookies técnicas están exentas del deber de obtener consentimiento (art. 22.2 de la LSSI-CE). Al no emplearse ningún otro tipo de cookie, no es necesario mostrar un banner de cookies.'] },
         { h: '4. Servicios de terceros', p: ['Si pulsas el botón de WhatsApp, saldrás de este sitio web y pasarás a un servicio de terceros que se rige por su propia política de privacidad y de cookies. Lo mismo ocurre con los enlaces externos.'] },
@@ -213,7 +213,7 @@ export const legal: Record<LegalKey, Record<Lang, LegalDoc>> = {
         { h: '1. Què són les cookies?', p: ['Les cookies són petits fitxers que un lloc web pot desar al teu dispositiu per recordar informació sobre la teva visita.'] },
         {
           h: '2. Cookies que utilitza aquest lloc',
-          p: ['Aquest lloc web no utilitza cookies d’anàlisi o mesurament, ni cookies publicitàries, ni de seguiment o de perfilatge. Només s’utilitzen cookies tècniques, estrictament necessàries perquè el lloc funcioni i per prestar el servei que sol·licites (per exemple, l’enviament del formulari de contacte).'],
+          p: ['Aquest lloc web no utilitza cookies d’anàlisi o mesurament, ni cookies publicitàries, ni de seguiment o de perfilatge. Només s’utilitzen cookies tècniques, estrictament necessàries perquè el lloc funcioni i per prestar el servei.'],
         },
         { h: '3. Per què no hi ha bàner de cookies', p: ['Les cookies tècniques estan exemptes del deure d’obtenir consentiment (art. 22.2 de la LSSI-CE). Com que no s’utilitza cap altre tipus de cookie, no cal mostrar cap bàner de cookies.'] },
         { h: '4. Serveis de tercers', p: ['Si prems el botó de WhatsApp, sortiràs d’aquest lloc web i passaràs a un servei de tercers que es regeix per la seva pròpia política de privacitat i de cookies. El mateix passa amb els enllaços externs.'] },
@@ -229,7 +229,7 @@ export const legal: Record<LegalKey, Record<Lang, LegalDoc>> = {
         { h: '1. What are cookies?', p: ['Cookies are small files that a website can store on your device to remember information about your visit.'] },
         {
           h: '2. Cookies used by this website',
-          p: ['This website does not use analytics or measurement cookies, advertising cookies, or tracking or profiling cookies. Only technical cookies are used, strictly necessary for the site to work and to provide the service you request (for example, submitting the contact form).'],
+          p: ['This website does not use analytics or measurement cookies, advertising cookies, or tracking or profiling cookies. Only technical cookies are used, strictly necessary for the site to work and to provide the service.'],
         },
         { h: '3. Why there is no cookie banner', p: ['Technical cookies are exempt from the obligation to obtain consent (Art. 22(2) of Spanish Law 34/2002, LSSI-CE). Since no other type of cookie is used, no cookie banner is needed.'] },
         { h: '4. Third-party services', p: ['If you click the WhatsApp button you leave this website and go to a third-party service governed by its own privacy and cookie policies. The same applies to external links.'] },

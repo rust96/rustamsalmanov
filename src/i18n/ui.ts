@@ -12,14 +12,7 @@ export interface UI {
   why: { h2: string; items: { title: string; text: string }[] };
   process: { h2: string; intro: string; steps: { title: string; text: string }[] };
   about: { h2: string; paragraphs: string[]; langs: string; langsList: string };
-  contact: {
-    h2: string; intro: string; email: string; whatsapp: string; whatsappText: string; phone: string;
-    form: {
-      name: string; email: string; type: string; typeDefault: string; types: string[];
-      message: string; consent: string; consentLink: string; send: string; sending: string;
-      ok: string; error: string; required: string;
-    };
-  };
+  contact: { h2: string; intro: string; whatsapp: string; whatsappText: string; phone: string };
   footer: { legal: string; privacy: string; cookies: string; rights: string; tagline: string };
   legalBack: string;
 }
@@ -103,26 +96,10 @@ export const ui: Record<Lang, UI> = {
     },
     contact: {
       h2: 'Pide presupuesto',
-      intro: 'Cuéntame qué necesitas y te respondo con una propuesta. También puedes escribirme directamente por email o WhatsApp.',
-      email: 'Email',
+      intro: 'Cuéntame por WhatsApp qué necesitas y te respondo con una propuesta.',
       whatsapp: 'Escribir por WhatsApp',
       whatsappText: 'Hola Rustam, me gustaría pedir presupuesto para una web.',
-      phone: 'Teléfono',
-      form: {
-        name: 'Nombre',
-        email: 'Email',
-        type: 'Tipo de proyecto',
-        typeDefault: 'Selecciona una opción',
-        types: ['Web corporativa', 'Tienda online', 'Aplicación web', 'Mantenimiento web', 'Consultoría técnica', 'Otro'],
-        message: 'Mensaje',
-        consent: 'He leído y acepto la',
-        consentLink: 'política de privacidad',
-        send: 'Enviar mensaje',
-        sending: 'Enviando…',
-        ok: 'Gracias, he recibido tu mensaje. Te responderé lo antes posible.',
-        error: 'No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbeme a rust.ukit@gmail.com.',
-        required: 'Obligatorio',
-      },
+      phone: 'Número de WhatsApp',
     },
     footer: {
       legal: 'Aviso legal',
@@ -212,26 +189,10 @@ export const ui: Record<Lang, UI> = {
     },
     contact: {
       h2: 'Demana pressupost',
-      intro: 'Explica’m què necessites i et respondré amb una proposta. També pots escriure’m directament per correu o WhatsApp.',
-      email: 'Correu electrònic',
+      intro: 'Explica’m per WhatsApp què necessites i et respondré amb una proposta.',
       whatsapp: 'Escriure per WhatsApp',
       whatsappText: 'Hola Rustam, m’agradaria demanar pressupost per a una web.',
-      phone: 'Telèfon',
-      form: {
-        name: 'Nom',
-        email: 'Correu electrònic',
-        type: 'Tipus de projecte',
-        typeDefault: 'Selecciona una opció',
-        types: ['Web corporativa', 'Botiga en línia', 'Aplicació web', 'Manteniment web', 'Consultoria tècnica', 'Altres'],
-        message: 'Missatge',
-        consent: 'He llegit i accepto la',
-        consentLink: 'política de privacitat',
-        send: 'Enviar missatge',
-        sending: 'Enviant…',
-        ok: 'Gràcies, he rebut el teu missatge. Et respondré el més aviat possible.',
-        error: 'No s’ha pogut enviar el missatge. Torna-ho a provar o escriu-me a rust.ukit@gmail.com.',
-        required: 'Obligatori',
-      },
+      phone: 'Número de WhatsApp',
     },
     footer: {
       legal: 'Avís legal',
@@ -321,26 +282,10 @@ export const ui: Record<Lang, UI> = {
     },
     contact: {
       h2: 'Request a quote',
-      intro: 'Tell me what you need and I will reply with a proposal. You can also reach me directly by email or WhatsApp.',
-      email: 'Email',
+      intro: 'Tell me what you need on WhatsApp and I will reply with a proposal.',
       whatsapp: 'Message on WhatsApp',
       whatsappText: 'Hi Rustam, I would like to request a quote for a website.',
-      phone: 'Phone',
-      form: {
-        name: 'Name',
-        email: 'Email',
-        type: 'Project type',
-        typeDefault: 'Select an option',
-        types: ['Corporate website', 'Online store', 'Web app', 'Website maintenance', 'Technical consulting', 'Other'],
-        message: 'Message',
-        consent: 'I have read and accept the',
-        consentLink: 'privacy policy',
-        send: 'Send message',
-        sending: 'Sending…',
-        ok: 'Thank you, I have received your message. I will get back to you as soon as possible.',
-        error: 'The message could not be sent. Please try again or email me at rust.ukit@gmail.com.',
-        required: 'Required',
-      },
+      phone: 'WhatsApp number',
     },
     footer: {
       legal: 'Legal notice',
