@@ -1,0 +1,68 @@
+---
+import '../styles/global.css';
+import { OWNER } from '../config';
+import { HTML_LANG, LANGS, OG_LOCALE, pagePath, withBase, type Lang, type PageKey } from '../i18n/routes';
+import { ui } from '../i18n/ui';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props { lang: Lang; pageKey: PageKey; title: string; description: string }
+const { lang, pageKey, title, description } = Astro.props;
+const t = ui[lang];
+
+const site = Astro.site!;
+const abs = (path: string) => new URL(withBase(path), site).href;
+const canonical = abs(pagePath(lang, pageKey));
+const ogImage = new URL(withBase('/og.png'), site).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: `${OWNER.name} — ${ui.en.footer.tagline}`,
+  url: abs(pagePath(lang, 'home')),
+  description: t.meta.description,
+  image: ogImage,
+  email: OWNER.email,
+  telephone: OWNER.phone,
+  address: { '@type': 'PostalAddress', addressLocality: 'Barcelona', addressRegion: 'Catalunya', addressCountry: 'ES' },
+  areaServed: { '@type': 'City', name: 'Barcelona' },
+  knowsLanguage: ['es', 'ca', 'en'],
+  founder: { '@type': 'Person', name: OWNER.name, jobTitle: 'Senior web developer' },
+  makesOffer: [
+    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: ui[lang].services.items[0].title }, priceSpecification: { '@type': 'PriceSpecification', minPrice: 1500, priceCurrency: 'EUR', valueAddedTaxIncluded: false } },
+    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: ui[lang].services.items[1].title }, priceSpecification: { '@type': 'UnitPriceSpecification', minPrice: 90, priceCurrency: 'EUR', unitCode: 'MON', valueAddedTaxIncluded: false } },
+    { '@type': 'Offer', itemOffered: { '@type': 'Service', name: ui[lang].services.items[2].title }, priceSpecification: { '@type': 'UnitPriceSpecification', price: 60, priceCurrency: 'EUR', unitCode: 'HUR', valueAddedTaxIncluded: false } },
+  ],
+};
+---
+<!doctype html>
+<html lang={HTML_LANG[lang]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+    <meta name="theme-color" content="#ffffff" />
+    {LANGS.map((l) => <link rel="alternate" hreflang={HTML_LANG[l]} href={abs(pagePath(l, pageKey))} />)}
+    <link rel="alternate" hreflang="x-default" href={abs(pagePath('es', pageKey))} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={OWNER.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={t.meta.ogAlt} />
+    <meta property="og:locale" content={OG_LOCALE[lang]} />
+    {LANGS.filter((l) => l !== lang).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE[l]} />)}
+    <meta name="twitter:card" content="summary_large_image" />
+    {pageKey === 'home' && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:shadow">{t.skip}</a>
+    <Header lang={lang} pageKey={pageKey} />
+    <main id="main"><slot /></main>
+    <Footer lang={lang} />
+  </body>
+</html>

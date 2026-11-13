@@ -1,0 +1,17 @@
+---
+import LegalPage from '../components/LegalPage.astro';
+import { LANGS, SLUGS, pagePath, type Lang } from '../i18n/routes';
+import type { LegalKey } from '../i18n/legal';
+
+export function getStaticPaths() {
+  const keys: LegalKey[] = ['legal', 'privacy', 'cookies'];
+  return LANGS.flatMap((lang) =>
+    keys.map((pageKey) => ({
+      params: { slug: pagePath(lang, pageKey).replace(/^\/|\/$/g, '') },
+      props: { lang, pageKey },
+    })),
+  );
+}
+const { lang, pageKey } = Astro.props as { lang: Lang; pageKey: LegalKey };
+---
+<LegalPage lang={lang} pageKey={pageKey} />

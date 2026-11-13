@@ -1,0 +1,50 @@
+---
+import { LANGS, LANG_NAME, pagePath, withBase, type Lang, type PageKey } from '../i18n/routes';
+import { ui } from '../i18n/ui';
+const { lang, pageKey } = Astro.props as { lang: Lang; pageKey: PageKey };
+const t = ui[lang];
+const home = withBase(pagePath(lang, 'home'));
+const links = [
+  ['services', t.nav.services],
+  ['why', t.nav.why],
+  ['process', t.nav.process],
+  ['about', t.nav.about],
+  ['contact', t.nav.contact],
+] as const;
+---
+<header class="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
+  <div class="container-x flex h-16 items-center justify-between gap-3">
+    <a href={home} class="text-base font-bold tracking-tight">Rustam Salmanov</a>
+
+    <nav aria-label={t.nav.menu} class="hidden items-center gap-6 text-sm font-medium text-muted md:flex">
+      {links.map(([id, label]) => <a href={`${home}#${id}`} class="hover:text-ink">{label}</a>)}
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <nav aria-label={t.nav.langLabel} class="flex items-center text-sm font-semibold">
+        {LANGS.map((l, i) => (
+          <>
+            {i > 0 && <span aria-hidden="true" class="text-gray-300">/</span>}
+            <a
+              href={withBase(pagePath(l, pageKey))}
+              hreflang={l}
+              lang={l}
+              title={LANG_NAME[l]}
+              aria-current={l === lang ? 'true' : undefined}
+              class:list={['px-2 py-2 uppercase', l === lang ? 'text-brand underline underline-offset-4' : 'text-muted hover:text-ink']}
+            >{l}</a>
+          </>
+        ))}
+      </nav>
+
+      <details class="relative md:hidden">
+        <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-line" aria-label={t.nav.menu}>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" /></svg>
+        </summary>
+        <nav aria-label={t.nav.menu} class="absolute right-0 mt-2 w-56 rounded-lg border border-line bg-white p-2 shadow-lg">
+          {links.map(([id, label]) => <a href={`${home}#${id}`} class="block rounded-md px-3 py-2.5 text-base font-medium hover:bg-soft">{label}</a>)}
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

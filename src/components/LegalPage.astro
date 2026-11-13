@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { legal, type LegalKey } from '../i18n/legal';
+import { pagePath, withBase, type Lang } from '../i18n/routes';
+import { ui } from '../i18n/ui';
+const { lang, pageKey } = Astro.props as { lang: Lang; pageKey: LegalKey };
+const doc = legal[pageKey][lang];
+---
+<Base lang={lang} pageKey={pageKey} title={`${doc.title} | Rustam Salmanov`} description={doc.description}>
+  <div class="container-x max-w-3xl py-12 sm:py-16">
+    <a href={withBase(pagePath(lang, 'home'))} class="text-sm font-medium text-brand underline underline-offset-2">{ui[lang].legalBack}</a>
+    <h1 class="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">{doc.title}</h1>
+    <p class="mt-2 text-sm text-muted">{doc.updated}</p>
+    {doc.sections.map((s) => (
+      <section class="mt-8">
+        <h2 class="text-lg font-semibold">{s.h}</h2>
+        {s.p?.map((x) => <p class="mt-2 text-muted">{x}</p>)}
+        {s.ul && <ul class="mt-2 list-disc space-y-1 pl-5 text-muted">{s.ul.map((x) => <li>{x}</li>)}</ul>}
+      </section>
+    ))}
+  </div>
+</Base>

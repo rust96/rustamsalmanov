@@ -1,0 +1,185 @@
+---
+import Base from '../layouts/Base.astro';
+import { OWNER, FORMSPREE_ID } from '../config';
+import { pagePath, withBase, type Lang } from '../i18n/routes';
+import { ui } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const t = ui[lang];
+const f = t.contact.form;
+const wa = `https://wa.me/${OWNER.whatsapp}?text=${encodeURIComponent(t.contact.whatsappText)}`;
+const privacyHref = withBase(pagePath(lang, 'privacy'));
+---
+<Base lang={lang} pageKey="home" title={t.meta.title} description={t.meta.description}>
+  <section class="border-b border-line">
+    <div class="container-x py-16 sm:py-24">
+      <p class="text-sm font-semibold uppercase tracking-wide text-brand">{t.hero.role}</p>
+      <h1 class="mt-4 max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl">{t.hero.h1}</h1>
+      <p class="mt-5 max-w-2xl text-lg text-muted">{t.hero.sub}</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a href="#contact" class="btn btn-primary">{t.hero.cta}</a>
+        <a href="#services" class="btn btn-ghost">{t.hero.secondary}</a>
+      </div>
+      <ul class="mt-10 flex flex-wrap gap-x-8 gap-y-2 text-sm text-muted">
+        {t.hero.facts.map((x) => <li class="flex items-center gap-2"><span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-brand"></span>{x}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section id="services" class="section" aria-labelledby="services-h">
+    <div class="container-x">
+      <h2 id="services-h" class="h2">{t.services.h2}</h2>
+      <p class="mt-3 max-w-2xl text-muted">{t.services.intro}</p>
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        {t.services.items.map((s, idx) => (
+          <article class="flex flex-col rounded-xl border border-line bg-white p-6">
+            <h3 class="text-lg font-semibold">{s.title}</h3>
+            <p class="mt-3">
+              {idx < 2 && <span class="text-sm text-muted">{t.services.from} </span>}
+              <span class="text-3xl font-bold tracking-tight">{s.price}</span><span class="text-muted">{s.unit}</span>
+            </p>
+            <p class="text-xs text-muted">{t.services.vat}</p>
+            <p class="mt-4 text-muted">{s.desc}</p>
+            <ul class="mt-4 space-y-2 text-sm">
+              {s.points.map((p) => (
+                <li class="flex gap-2"><svg class="mt-0.5 h-4 w-4 shrink-0 text-brand" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3.5 3.5L13 5" /></svg><span>{p}</span></li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="section bg-soft" aria-labelledby="why-h">
+    <div class="container-x">
+      <h2 id="why-h" class="h2">{t.why.h2}</h2>
+      <ul class="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
+        {t.why.items.map((w) => (
+          <li>
+            <h3 class="font-semibold">{w.title}</h3>
+            <p class="mt-1 text-muted">{w.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="process" class="section" aria-labelledby="process-h">
+    <div class="container-x">
+      <h2 id="process-h" class="h2">{t.process.h2}</h2>
+      <p class="mt-3 max-w-2xl text-muted">{t.process.intro}</p>
+      <ol class="mt-10 grid gap-5 md:grid-cols-5">
+        {t.process.steps.map((s, i) => (
+          <li class="rounded-xl border border-line p-5">
+            <span class="flex h-8 w-8 items-center justify-center rounded-full bg-brand text-sm font-bold text-white" aria-hidden="true">{i + 1}</span>
+            <h3 class="mt-4 font-semibold leading-snug">{s.title}</h3>
+            <p class="mt-2 text-sm text-muted">{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  {/*
+    PROJECTS — add when you have real work to show. Do not publish invented clients or cases.
+
+    <section id="projects" class="section bg-soft" aria-labelledby="projects-h">
+      <div class="container-x">
+        <h2 id="projects-h" class="h2">Proyectos / Projectes / Projects</h2>
+        <div class="mt-10 grid gap-5 md:grid-cols-2">
+          <article class="rounded-xl border border-line bg-white p-6">
+            <h3 class="font-semibold">Project name</h3>
+            <p class="mt-2 text-muted">What you did, for whom (with their permission), and the result.</p>
+            <a href="https://example.com" class="mt-3 inline-block font-medium text-brand underline">Visit</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  */}
+
+  <section id="about" class="section bg-soft" aria-labelledby="about-h">
+    <div class="container-x max-w-3xl">
+      <h2 id="about-h" class="h2">{t.about.h2}</h2>
+      <div class="mt-6 space-y-4 text-lg text-muted">
+        {t.about.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+      <p class="mt-6 text-sm"><span class="font-semibold">{t.about.langs}:</span> <span class="text-muted">{t.about.langsList}</span></p>
+    </div>
+  </section>
+
+  <section id="contact" class="section" aria-labelledby="contact-h">
+    <div class="container-x grid gap-10 lg:grid-cols-5">
+      <div class="lg:col-span-2">
+        <h2 id="contact-h" class="h2">{t.contact.h2}</h2>
+        <p class="mt-3 text-muted">{t.contact.intro}</p>
+        <dl class="mt-6 space-y-3 text-base">
+          <div><dt class="text-sm text-muted">{t.contact.email}</dt><dd><a class="font-medium text-brand underline underline-offset-2" href={`mailto:${OWNER.email}`}>{OWNER.email}</a></dd></div>
+          <div><dt class="text-sm text-muted">{t.contact.phone}</dt><dd><a class="font-medium text-brand underline underline-offset-2" href={`tel:${OWNER.phone.replace(/\s/g, '')}`}>{OWNER.phone}</a></dd></div>
+        </dl>
+        <a href={wa} class="btn mt-6 bg-[#15803d] text-white hover:bg-[#166534]" target="_blank" rel="noopener noreferrer">
+          {t.contact.whatsapp}
+        </a>
+      </div>
+
+      <form id="contact-form" class="space-y-4 lg:col-span-3" action={`https://formspree.io/f/${FORMSPREE_ID}`} method="POST" data-ok={f.ok} data-err={f.error} data-sending={f.sending}>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="cf-name" class="mb-1 block text-sm font-medium">{f.name}</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required class="field" />
+          </div>
+          <div>
+            <label for="cf-email" class="mb-1 block text-sm font-medium">{f.email}</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required class="field" />
+          </div>
+        </div>
+        <div>
+          <label for="cf-type" class="mb-1 block text-sm font-medium">{f.type}</label>
+          <select id="cf-type" name="project_type" required class="field">
+            <option value="" disabled selected>{f.typeDefault}</option>
+            {f.types.map((x) => <option value={x}>{x}</option>)}
+          </select>
+        </div>
+        <div>
+          <label for="cf-msg" class="mb-1 block text-sm font-medium">{f.message}</label>
+          <textarea id="cf-msg" name="message" rows="5" required class="field"></textarea>
+        </div>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+        <input type="hidden" name="_subject" value="Web contact — rustamsalmanov" />
+        <label class="flex items-start gap-2 text-sm text-muted">
+          <input type="checkbox" name="consent" required class="mt-1 h-4 w-4" />
+          <span>{f.consent} <a class="text-brand underline underline-offset-2" href={privacyHref}>{f.consentLink}</a>.</span>
+        </label>
+        <button type="submit" class="btn btn-primary w-full sm:w-auto">{f.send}</button>
+        <p id="form-status" role="status" aria-live="polite" class="text-sm font-medium"></p>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const status = document.getElementById('form-status');
+    if (form && status) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type=submit]') as HTMLButtonElement;
+        const label = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = form.dataset.sending ?? '…';
+        status.className = 'text-sm font-medium';
+        try {
+          const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+          if (!res.ok) throw new Error(String(res.status));
+          form.reset();
+          status.textContent = form.dataset.ok ?? '';
+          status.classList.add('text-green-800');
+        } catch {
+          status.textContent = form.dataset.err ?? '';
+          status.classList.add('text-red-700');
+        } finally {
+          btn.disabled = false;
+          btn.textContent = label;
+        }
+      });
+    }
+  </script>
+</Base>

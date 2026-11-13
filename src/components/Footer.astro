@@ -1,0 +1,19 @@
+---
+import { pagePath, withBase, type Lang } from '../i18n/routes';
+import { ui } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const t = ui[lang].footer;
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-line bg-soft">
+  <div class="container-x flex flex-col gap-4 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+    <p>© {year} Rustam Salmanov · {t.tagline}. {t.rights}</p>
+    <nav aria-label="Legal">
+      <ul class="flex flex-wrap gap-x-5 gap-y-1">
+        <li><a class="underline underline-offset-2 hover:text-ink" href={withBase(pagePath(lang, 'legal'))}>{t.legal}</a></li>
+        <li><a class="underline underline-offset-2 hover:text-ink" href={withBase(pagePath(lang, 'privacy'))}>{t.privacy}</a></li>
+        <li><a class="underline underline-offset-2 hover:text-ink" href={withBase(pagePath(lang, 'cookies'))}>{t.cookies}</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
